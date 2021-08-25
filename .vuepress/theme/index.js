@@ -30,7 +30,7 @@ module.exports = {
           dayjs.extend(timezone)
           return dayjs(timestamp)
             .tz('Asia/Tokyo')
-            .format('YYYY/MM/DD HH:mmZ')
+            .format('YYYY/MM/DD HH:mm')
         },
       },
     ],

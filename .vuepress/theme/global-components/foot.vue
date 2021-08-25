@@ -1,6 +1,8 @@
 <template>
-  <div class="bg-gray-100 py-20 flex justify-center">
-    Suumokr (c) {{ yyyy }}
+  <div
+    class="bg-gray-100 py-10 flex justify-center text-sm text-gray-500 dark:bg-dark-900"
+  >
+    © Suumokr. Powered by GitHub Pages.
   </div>
 </template>
 
@@ -14,3 +16,11 @@ export default {
   },
 }
 </script>
+
+<style>
+footer {
+  height: 104px;
+  position: relative;
+  transform: translateY(-100%);
+}
+</style>

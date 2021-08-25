@@ -2,13 +2,15 @@
   <div class="px-3 ">
     <div class="text-center py-10 relative">
       <div
-        class="absolute top-0 left-0 text-sm py-3 flex gap-x-3 items-center text-gray-600 text-lg"
+        class="absolute top-0 left-0 text-sm py-3 flex gap-x-3 items-center text-gray-600 text-lg dark:text-gray-400"
       >
         <i class="devicon-github-original "></i>
       </div>
       <img :src="$themeConfig.avatar" class="w-10 h-10 mx-auto" />
-      <hr class="w-20 mx-auto " />
-      <p class="text-lg text-gray-700  max-w-min mx-auto px-2 rounded-sm mt-2">
+      <hr class="w-20 mx-auto dark:border-black" />
+      <p
+        class="text-lg text-gray-700  max-w-min mx-auto px-2 rounded-sm mt-2 dark:text-gray-300"
+      >
         {{ $themeConfig.name }}
       </p>
       <div class="flex justify-center items-center text-xs text-gray-400">

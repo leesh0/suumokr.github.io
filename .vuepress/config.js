@@ -1,5 +1,5 @@
 const pagination = {
-  lengthPerPage: 10000, // A temporary solution until the paging component is completed
+  lengthPerPage: 10, // A temporary solution until the paging component is completed
 }
 
 const defaultBlogPluginConfig = {
@@ -8,7 +8,7 @@ const defaultBlogPluginConfig = {
       id: 'post',
       dirname: '_posts',
       path: '/',
-      itemPermalink: '/:slug',
+      itemPermalink: '/post/:slug',
       pagination: pagination,
     },
   ],
@@ -29,14 +29,34 @@ const blogPluginConfig = Object.assign({}, defaultBlogPluginConfig)
 module.exports = {
   title: 'Suumokr',
   plugins: [
+    require('./plugins/page'),
     '@kawarimidoll/tailwind',
+    'vuepress-plugin-nprogress',
+    [
+      'vuepress-plugin-git-log',
+      {
+        additionalArgs: '--no-merges',
+        onlyFirstAndLastCommit: true,
+      },
+    ],
     ['@vuepress/back-to-top', true],
     [
       '@vuepress/blog',
       {
-        id: 'post',
-        dirname: '_posts',
-        path: '/',
+        directories: [
+          {
+            // Unique ID of current classification
+            id: 'post',
+            // Target directory
+            dirname: '_posts',
+            // Path of the `entry page` (or `list page`)
+            path: '/',
+            itemPermalink: '/:slug',
+            pagination: {
+              lengthPerPage: 100000000,
+            },
+          },
+        ],
       },
     ],
   ],
