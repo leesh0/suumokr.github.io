@@ -1,9 +1,12 @@
 ---
+title: vue.js로 프론트엔드 완벽 정복하기
 layout: Home
 date: 2020-07-02
+thumb: vuejs
+tags: ['vue', 'js', '프론트엔드']
 ---
 
-# 문서 제목
+# vscode에서 이거 설정하기
 
 주제 내용
 
