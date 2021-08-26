@@ -28,9 +28,12 @@ module.exports = {
           const timezone = require('dayjs/plugin/timezone')
           dayjs.extend(utc)
           dayjs.extend(timezone)
-          return dayjs(timestamp)
-            .tz('Asia/Tokyo')
-            .format('YYYY/MM/DD HH:mm')
+          return {
+            str: dayjs(timestamp)
+              .tz('Asia/Tokyo')
+              .format('YYYY/MM/DD HH:mm'),
+            timestamp,
+          }
         },
       },
     ],

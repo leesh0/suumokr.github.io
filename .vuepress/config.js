@@ -43,6 +43,11 @@ module.exports = {
     [
       '@vuepress/blog',
       {
+        sorter: (prev, next) => {
+          const prevTime = prev.created.timestamp
+          const nextTime = next.created.timestamp
+          return prevTime - nextTime < 0 ? -1 : 1
+        },
         directories: [
           {
             // Unique ID of current classification
@@ -83,3 +88,6 @@ module.exports = {
     },
   },
 }
+1629725874000
+1629917125000
+1629725874000

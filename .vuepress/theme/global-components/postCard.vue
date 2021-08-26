@@ -28,7 +28,7 @@
       </div>
       <div>
         <p class="text-xs text-gray-400 pb-1">{{ post.readingTime.text }}</p>
-        <p class="text-xs text-gray-400 ">{{ post.lastUpdated }}</p>
+        <p class="text-xs text-gray-400 ">{{ post.created.str }}</p>
       </div>
     </div>
   </div>

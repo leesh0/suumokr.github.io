@@ -8,7 +8,7 @@
         <series-card v-for="post in 10" />
       </div>
       <!-- end Card -->
-      {{ $page.git }}
+      {{ $pagination }}
     </div>
   </div>
 </template>
