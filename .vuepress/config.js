@@ -24,12 +24,12 @@ const defaultBlogPluginConfig = {
     },
   ],
 }
-
 const blogPluginConfig = Object.assign({}, defaultBlogPluginConfig)
 module.exports = {
   title: 'Suumokr',
   plugins: [
-    require('./plugins/page'),
+    'element-ui',
+    require('./theme/plugins/page'),
     '@kawarimidoll/tailwind',
     'vuepress-plugin-nprogress',
     [
@@ -39,15 +39,32 @@ module.exports = {
         onlyFirstAndLastCommit: true,
       },
     ],
-    ['@vuepress/back-to-top', true],
+    [('@vuepress/back-to-top', true)],
     [
       '@vuepress/blog',
       {
-        sorter: (prev, next) => {
-          const prevTime = prev.created.timestamp
-          const nextTime = next.created.timestamp
-          return prevTime - nextTime < 0 ? -1 : 1
+        sitemap: {
+          hostname: 'http://localhost:8000',
         },
+        feed: {
+          canonical_base: 'http://localhost:8080',
+        },
+        frontmatters: [
+          {
+            id: 'series',
+            keys: ['series'],
+            path: '/series/',
+            layout: 'IndexPost',
+            scopeLayout: 'Series',
+          },
+          {
+            id: 'tags',
+            keys: ['tag', 'tags'],
+            path: '/tags/',
+            layout: 'IndexPost',
+            scopeLayout: 'Tags',
+          },
+        ],
         directories: [
           {
             // Unique ID of current classification
@@ -56,7 +73,7 @@ module.exports = {
             dirname: '_posts',
             // Path of the `entry page` (or `list page`)
             path: '/',
-            itemPermalink: '/:slug',
+            itemPermalink: 'blog/:slug',
             pagination: {
               lengthPerPage: 100000000,
             },
@@ -88,6 +105,3 @@ module.exports = {
     },
   },
 }
-1629725874000
-1629917125000
-1629725874000

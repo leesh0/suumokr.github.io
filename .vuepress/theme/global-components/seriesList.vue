@@ -5,38 +5,28 @@
       <div
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-5"
       >
-        <series-card v-for="post in 10" />
+        <series-card v-for="s in series" :data="s" />
       </div>
       <!-- end Card -->
-      {{ $pagination }}
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  beforeMount() {
-    var pages = this.$pagination?._matchedPages
-    pages.forEach((e) => {
-      if (e.series) {
-        if (this.series[e.series]) {
-          this.series[e.series] += 1
-        } else {
-          this.series[e.series] = 1
-        }
-      } else {
-        if (this.series.Etc) {
-          this.series.Etc += 1
-        } else {
-          this.series.Etc = 1
-        }
+  computed: {
+    series() {
+      const seriesObj = this.$frontmatterKey.list
+      let series = []
+      for (const e of seriesObj) {
+        series.push({
+          name: e.name,
+          thumb: e.pages.slice(-1)[0].thumb,
+          cnt: e.pages.length,
+        })
       }
-    })
-  },
-  data() {
-    return {
-      series: {},
-    }
+      return series
+    },
   },
 }
 </script>

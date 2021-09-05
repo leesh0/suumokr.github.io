@@ -9,7 +9,7 @@
       <img :src="$themeConfig.avatar" class="w-10 h-10 mx-auto" />
       <hr class="w-20 mx-auto dark:border-black" />
       <p
-        class="text-lg text-gray-700  max-w-min mx-auto px-2 rounded-sm mt-2 dark:text-gray-300"
+        class="ubuntu text-lg text-black  max-w-min mx-auto px-2 rounded-sm mt-2 dark:text-gray-300"
       >
         {{ $themeConfig.name }}
       </p>

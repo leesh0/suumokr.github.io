@@ -1,15 +1,25 @@
 <template>
-  <div class="h-full ">
+  <div class="h-full font-sans">
     <div class="relative wrapper flex flex-col">
       <div>
+        <navbar />
         <div class="max-w-screen-lg mx-auto px-3">
-          <navbar />
           <infocard />
         </div>
       </div>
       <hometab v-model="tab" />
-      <postList v-if="tab == 1" class="h-full flex-grow" />
-      <seriesList v-if="tab == 2" class="h-full flex-grow" />
+      <postList
+        v-if="$page.frontmatter.title == 'Post'"
+        class="h-full flex-grow"
+      />
+      <seriesList
+        v-if="$page.frontmatter.title == 'Series'"
+        class="h-full flex-grow"
+      />
+      <tagsList
+        v-if="$page.frontmatter.title == 'Tags'"
+        class="h-full flex-grow"
+      />
     </div>
 
     <footer><foot /></footer>

@@ -119,4 +119,8 @@ Lesson 2
   - 무질서한거동 : 매일의 생활을 보이는 개개의 행동.
 - 질서포켓
   복잡계에 갑자기 나타나는 질서있는 상태.
--
+
+```python
+print("Hello")
+from .code import ass
+```

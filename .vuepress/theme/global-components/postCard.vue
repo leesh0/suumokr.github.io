@@ -1,108 +1,94 @@
 <template>
-  <div
-    class="text-gray-400 transform transition delay-100 hover:text-dark-600 dark:text-dark-50 dark:hover:text-gray-200  hover:-translate-y-2 cursor-pointer"
-  >
-    <p class="font-bold text-gray-400 italic text-sm sm:text-base">
-      # {{ post.frontmatter.series ? post.frontmatter.series : 'Etc' }}.
-    </p>
-    <p
-      class="font-semibold text-gray-700 text-base max-h-12 sm:text-lg sm:max-h-14 line-clamp-2 dark:text-gray-200"
+  <router-link :to="post.path">
+    <div
+      class="text-gray-400 transform transition delay-100 hover:text-dark-600 dark:text-dark-50 dark:hover:text-gray-200  hover:-translate-y-2 cursor-pointer"
     >
-      {{ post.title }}
-    </p>
-    <p class="line-clamp-4 text-sm my-3 h-20">{{ post.desc }}</p>
-    <div class="flex pb-3 gap-x-2">
-      <div
-        v-for="tag in post.frontmatter.tags"
-        class="text-sm font-medium text-gray-600 dark:text-gray-400"
-      >
-        <span>#{{ tag }}</span>
+      <div class="flex  gap-x-2 mb-2">
+        <p
+          v-if="index"
+          class="font-semibold text-gray-400 italic text-lg sm:text-xl mb-2"
+        >
+          # {{ index }}.
+        </p>
+        <p
+          v-if="minimal"
+          class="text-lg sm:text-xl text-black font-semibold dark:text-gray-200"
+        >
+          {{ post.frontmatter.title }}
+        </p>
+      </div>
+      <div :class="minimal ? 'flex gap-x-3' : ''">
+        <div
+          class="  bg-white dark:bg-dark-800 mb-3 rounded-md"
+          :class="
+            minimal ? 'w-20 h-20 flex-shrink-0' : 'aspect-w-10 aspect-h-5'
+          "
+        >
+          <div class="flex justify-center items-center w-full h-full">
+            <div
+              v-if="!index && !minimal"
+              class="absolute bottom-2 right-2 bg-black bg-opacity-50  text-xs max-w-max h-auto px-1 rounded-sm "
+            >
+              <span class="text-white dark:text-gray-300 italic">
+                {{ index ? index : post.frontmatter.series + ' Series' }}.</span
+              >
+            </div>
+            <img
+              v-if="post.thumb.isDevicon"
+              :src="post.thumb.src"
+              :class="minimal ? 'w-12 h-12' : 'w-28 h-28'"
+            />
+            <span v-else>{{ post.thumb.src }}</span>
+          </div>
+        </div>
+        <div>
+          <p
+            v-if="!minimal"
+            class="font-semibold text-black text-base max-h-12 sm:text-lg sm:max-h-14 line-clamp-2 dark:text-gray-200"
+          >
+            {{ post.title }}
+          </p>
+          <div v-if="!minimal" class="flex justify-between items-center">
+            <p class="text-xs text-gray-400 ubuntu py-2">
+              {{ post.created.str }}
+            </p>
+            <p class="text-xs text-gray-400 pb-1 ubuntu px-1">
+              {{ post.readingTime.text }}
+            </p>
+          </div>
+          <p
+            class="text-sm"
+            :class="minimal ? 'line-clamp-3 ' : 'line-clamp-4  my-3 h-20'"
+            :style="minimal ? 'height:3.75rem;' : ''"
+          >
+            {{ post.desc }}
+          </p>
+          <p
+            v-if="minimal"
+            class="text-xs text-gray-600 dark:text-gray-400 ubuntu mt-1"
+          >
+            {{ post.created.str }}
+          </p>
+        </div>
+      </div>
+      <div class="line-clamp-1" v-if="!minimal">
+        <div class="flex pb-3 gap-x-2 ">
+          <div
+            v-for="tag in post.frontmatter.tags"
+            class="text-sm  text-gray-600 dark:text-gray-400"
+          >
+            <span class="text-blue-500 font-normal dark:text-green-600"
+              >#{{ tag }}</span
+            >
+          </div>
+        </div>
       </div>
     </div>
-    <div class="flex gap-x-3 items-center">
-      <div
-        class="w-10 h-10 bg-gray-50 flex justify-center items-center text-2xl rounded-md dark:bg-gray-700"
-      >
-        <img v-if="isDevicon" :src="thumb" class="w-7 h-7" />
-        <span v-else>{{ thumb }}</span>
-      </div>
-      <div>
-        <p class="text-xs text-gray-400 pb-1">{{ post.readingTime.text }}</p>
-        <p class="text-xs text-gray-400 ">{{ post.created.str }}</p>
-      </div>
-    </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
-import devicons from '@theme/assets/data/devicon.json'
-import gitmoji from '@theme/assets/data/gitmojis.json'
-
-const checkDevicons = (t) => {
-  for (var i = 0; i < devicons.length; i++) {
-    if (devicons[i].name == t) {
-      let version = devicons[i].versions.svg[0]
-        ? devicons[i].versions.svg[0]
-        : 'original'
-      let url = `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${devicons[i].name}/${devicons[i].name}-${version}.svg`
-      return url
-    }
-  }
-  return false
-}
-
-const checkGitmojis = (t) => {
-  var emojis = gitmoji.gitmojis
-  for (var i = 0; i < emojis.length; i++) {
-    if (emojis[i].code == t) {
-      return emojis[i].emoji
-    }
-  }
-  return false
-}
-
 export default {
-  beforeMount() {
-    this.setThumb()
-  },
-  props: ['post'],
-  data() {
-    return {
-      devicons,
-      isDevicon: false,
-      thumb: undefined,
-    }
-  },
-  methods: {
-    setThumb() {
-      const thumb = this.post.frontmatter.thumb
-      const emojis = gitmoji.gitmojis
-      console.log(this.post.frontmatter)
-      if (!thumb) {
-        this.thumb = this.randEmoji()
-        return null
-      }
-      var isDev = checkDevicons(thumb)
-      if (isDev) {
-        this.isDevicon = true
-        this.thumb = isDev
-        return null
-      }
-      var isGit = checkGitmojis(thumb)
-      if (isGit) {
-        this.thumb = isGit
-        return null
-      }
-
-      this.thumb = this.randEmoji()
-
-      return null
-    },
-    randEmoji() {
-      const emojis = gitmoji.gitmojis
-      let emojiId = Math.floor(Math.random() * emojis.length)
-      return emojis[emojiId].emoji
-    },
-  },
+  props: ['post', 'index', 'minimal'],
 }
 </script>

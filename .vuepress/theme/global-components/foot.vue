@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="bg-gray-100 py-10 flex justify-center text-sm text-gray-500 dark:bg-dark-900"
-  >
+  <div class="py-10 flex justify-center text-sm text-gray-500 d">
     © Suumokr. Powered by GitHub Pages.
   </div>
 </template>
