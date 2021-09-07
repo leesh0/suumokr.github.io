@@ -2,7 +2,7 @@
   <router-link :to="`/series/${data.name}/`">
     <div class="flex px-2 gap-x-5">
       <div
-        class="w-20 h-20 rounded-md bg-white dark:bg-dark-800  flex justify-center items-center thumb-text flex-shrink-0"
+        class="w-20 h-20 rounded-md bg-gray-50 dark:bg-dark-800  flex justify-center items-center thumb-text flex-shrink-0"
       >
         <img
           v-if="data.thumb.isDevicon"

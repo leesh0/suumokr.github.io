@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-100 dark:bg-dark-900">
+  <div class="bg-transparent">
     <div class=" max-w-screen-lg mx-auto py-6 px-3 ">
       <!-- card -->
       <div

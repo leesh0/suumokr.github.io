@@ -1,7 +1,7 @@
 <template>
   <div>
     <p class="text-2xl text-gray-600 dark:text-gray-400 mb-2">
-      <span class="text-blue-500 dark:text-green-500 italic mr-1">#</span
+      <span class="text-blue-500 dark:text-dark-50 italic mr-1">#</span
       >{{ tag.name }}
     </p>
 
@@ -11,7 +11,7 @@
         v-for="post in tag.pages.slice(0, 2)"
       >
         <div
-          class="flex-shrink-0 w-16 h-16 rounded-md bg-white dark:bg-dark-500  flex justify-center items-center"
+          class="flex-shrink-0 w-16 h-16 rounded-md bg-gray-50 dark:bg-dark-800  flex justify-center items-center"
         >
           <img
             class="w-10 h-10"

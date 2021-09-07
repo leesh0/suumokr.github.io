@@ -1,5 +1,6 @@
 const devicons = require('../assets/data/devicon.json')
 const gitmoji = require('../assets/data/gitmojis.json')
+const icons = require('../assets/data/icons.js')
 const path = require('path')
 const _path = require('path')
 const spawn = require('cross-spawn')
@@ -9,6 +10,8 @@ const timezone = require('dayjs/plugin/timezone')
 var markDownIt = require('markdown-it'),
   md = new markDownIt()
 const plainText = require('markdown-it-plain-text')
+
+const dIcons = icons.icons
 
 md.use(plainText)
 
@@ -38,7 +41,7 @@ module.exports = {
       } else if (isGit) {
         $page.thumb = { isDevicon: false, src: isGit }
       } else {
-        $page.thumb = { isDevicon: false, src: this.randEmoji() }
+        $page.thumb = { isDevicon: false, src: randEmoji() }
       }
     }
     // end thumb
@@ -76,12 +79,9 @@ function randEmoji() {
 }
 
 const checkDevicons = (t) => {
-  for (var i = 0; i < devicons.length; i++) {
-    if (devicons[i].name == t) {
-      let version = devicons[i].versions.svg[0]
-        ? devicons[i].versions.svg[0]
-        : 'original'
-      let url = `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${devicons[i].name}/${devicons[i].name}-${version}.svg`
+  for (var i = 0; i < dIcons.length; i++) {
+    if (dIcons[i].name == t) {
+      let url = `https://raw.githubusercontent.com/suumokr/vscode-material-icon-theme/main/icons/${t}.svg`
       return url
     }
   }

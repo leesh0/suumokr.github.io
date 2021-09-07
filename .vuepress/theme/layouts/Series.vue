@@ -68,7 +68,7 @@ body {
 </style>
 <style lang="scss">
 .dark {
-  @apply bg-dark-800;
+  @apply bg-dark-900;
 }
 
 .bg-dark {

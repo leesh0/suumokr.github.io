@@ -19,7 +19,7 @@
       </div>
       <div :class="minimal ? 'flex gap-x-3' : ''">
         <div
-          class="  bg-white dark:bg-dark-800 mb-3 rounded-md"
+          class="  bg-gray-50 dark:bg-dark-800 mb-3 rounded-md"
           :class="
             minimal ? 'w-20 h-20 flex-shrink-0' : 'aspect-w-10 aspect-h-5'
           "
@@ -38,7 +38,7 @@
               :src="post.thumb.src"
               :class="minimal ? 'w-12 h-12' : 'w-28 h-28'"
             />
-            <span v-else>{{ post.thumb.src }}</span>
+            <span v-else style="font-size:5rem">{{ post.thumb.src }}</span>
           </div>
         </div>
         <div>
@@ -77,9 +77,7 @@
             v-for="tag in post.frontmatter.tags"
             class="text-sm  text-gray-600 dark:text-gray-400"
           >
-            <span class="text-blue-500 font-normal dark:text-green-600"
-              >#{{ tag }}</span
-            >
+            <span class="text-blue-500 font-normal ">#{{ tag }}</span>
           </div>
         </div>
       </div>

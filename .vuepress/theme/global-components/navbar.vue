@@ -1,5 +1,5 @@
 <template>
-  <div class="py-4 sm:py-8 px-3 lg:px-20">
+  <div class="max-w-screen-lg mx-auto py-4 sm:py-8 px-3">
     <div class="flex justify-between items-center">
       <router-link to="/">
         <div>

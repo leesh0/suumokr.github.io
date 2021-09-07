@@ -1,9 +1,9 @@
 <template>
   <div
-    class="sticky top-0 bg-white pl-3 backdrop-filter backdrop-blur-sm bg-opacity-70 dark:bg-dark-800 z-10"
+    class="sticky top-0 bg-white pl-3 my-10 py-1 backdrop-filter backdrop-blur-sm bg-opacity-70 dark:bg-opacity-70 dark:bg-dark-900 z-10"
   >
     <div
-      class=" ubuntu flex gap-x-5 text-base  sm:text-base max-w-screen-lg mx-auto "
+      class=" ubuntu flex gap-x-5 text-base  sm:text-lg max-w-screen-lg mx-auto "
     >
       <div
         class="tab"
