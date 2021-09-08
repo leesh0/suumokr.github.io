@@ -1,7 +1,7 @@
 ---
 title: vue.js로 프론트엔드 완벽 정복하기
 date: 2020-07-02
-thumb: vuejs
+thumb: vue
 tags: ['vue', 'js', '프론트엔드']
 ---
 
