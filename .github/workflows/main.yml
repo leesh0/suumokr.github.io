@@ -8,10 +8,10 @@ jobs:
         uses: actions/checkout@master
 
       - name: vuepress-deploy
-        uses: suumokr/suumokr.github.io@master
+        uses: jenkey2011/vuepress-deploy@master
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          TARGET_REPO: username/repo
-          TARGET_BRANCH: gh-pages
+          TARGET_REPO: suumokr/suumokr.github.io
+          TARGET_BRANCH: gh-page2
           BUILD_SCRIPT: yarn && yarn docs:build
           BUILD_DIR: /
