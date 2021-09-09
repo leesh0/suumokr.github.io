@@ -8,7 +8,7 @@
         </div>
       </div>
       <!--  -->
-      {{ $pagination }}
+      <til-list />
     </div>
 
     <footer><foot /></footer>

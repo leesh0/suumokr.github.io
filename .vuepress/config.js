@@ -71,13 +71,6 @@ module.exports = {
               lengthPerPage: 100000000,
             },
           },
-          {
-            id: 'til',
-            dirname: '_til',
-            path: '/til/',
-            layout: 'TIL',
-            itemPermalink: 'til/:year/:month/:day/:slug',
-          },
         ],
       },
     ],
