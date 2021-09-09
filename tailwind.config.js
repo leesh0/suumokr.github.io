@@ -33,7 +33,7 @@ module.exports = {
               'a code': { color: theme('colors.gray.100') },
               pre: {
                 color: theme('colors.gray.200'),
-                backgroundColor: theme('colors.gray.800'),
+                backgroundColor: theme('colors.black'),
               },
               thead: {
                 color: theme('colors.gray.100'),

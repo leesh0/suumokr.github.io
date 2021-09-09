@@ -32,14 +32,6 @@ module.exports = {
     require('./theme/plugins/page'),
     '@kawarimidoll/tailwind',
     'vuepress-plugin-nprogress',
-    'vuepress-plugin-global-toc',
-    [
-      'vuepress-plugin-git-log',
-      {
-        additionalArgs: '--no-merges',
-        onlyFirstAndLastCommit: true,
-      },
-    ],
     [('@vuepress/back-to-top', true)],
     [
       '@vuepress/blog',
@@ -97,6 +89,7 @@ module.exports = {
     lastUpdated: true,
     avatar: 'https://avatars.githubusercontent.com/u/57043683?v=4',
     name: 'Suumokr',
+    title: '開発記録',
     location: 'Korea',
     sites: [{ fav: '', name: 'TIL.', url: '' }],
     skills: {
