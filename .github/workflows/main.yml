@@ -1,17 +1,31 @@
-name: A TO A:GH_PAGES
-on: [push]
+name: blog deploy
+
+on:
+  push:
+    branches: [master]
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: checkout
         uses: actions/checkout@master
 
-      - name: Build and Deploy
-        uses: suumokr/suumokr.github.io@master
+      - name: Install and Build
+        run: |
+          yarn install
+          yarn docs:build
+
+      - name: Deploy Build Files
         env:
+          # You should enroll ACEESS_TOKEN to repository's secret
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          TARGET_REPO: suumokr/suumokr.github.io
-          TARGET_BRANCH: gh_pages
-          BUILD_SCRIPT: yarn && yarn build
-          BUILD_DIR: .vuepress/dist/
+        run: |
+          cd .vuepress/dist
+          git config --global user.email "notedev.jp@gmail.com"
+          git config --global user.name "suumokr"
+          git init
+          git add -A
+          git commit -m 'deploy with vuepress'
+          git push -f https://${ACCESS_TOKEN}@github.com/${GITHUB_REPOSITORY}.git master:gh-pages
