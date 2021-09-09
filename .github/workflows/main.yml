@@ -14,4 +14,4 @@ jobs:
           TARGET_REPO: suumokr/suumokr.github.io
           TARGET_BRANCH: gh-page2
           BUILD_SCRIPT: yarn && yarn docs:build
-          BUILD_DIR: /
+          BUILD_DIR: .vuepress/dist/
