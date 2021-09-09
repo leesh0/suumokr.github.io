@@ -71,6 +71,13 @@ module.exports = {
               lengthPerPage: 100000000,
             },
           },
+          {
+            id: 'til',
+            dirname: '_til',
+            path: '/til/',
+            layout: 'TIL',
+            itemPermalink: 'til/:year/:month/:day/:slug',
+          },
         ],
       },
     ],
@@ -91,7 +98,8 @@ module.exports = {
     name: 'Suumokr',
     title: '開発記録',
     location: 'Korea',
-    sites: [{ fav: '', name: 'TIL.', url: '' }],
+    sns: { github: 'suumokr' },
+    sites: [{ fav: '', name: 'TIL.', url: '/til/' }],
     skills: {
       // https://devicon.dev/
       lang: ['javascript', 'python'],

@@ -1,7 +1,7 @@
 <template>
   <div class="sticky top-0 md:relative z-10 mb-10">
     <div class="author-card">
-      <div class="flex gap-x-3">
+      <router-link to="/" class="flex gap-x-3">
         <img
           :src="$themeConfig.avatar"
           class="rounded-full bg-blue-50 w-10 h-10"
@@ -10,7 +10,7 @@
           <div class="ubuntu dark:text-gray-200">{{ $themeConfig.name }}</div>
           <div class="text-sm text-gray-400 ">{{ $themeConfig.title }}</div>
         </div>
-      </div>
+      </router-link>
       <div
         class="select-none cursor-pointer hover:text-blue-500 dark:text-gray-200 md:hidden"
         @click="toc = !toc"

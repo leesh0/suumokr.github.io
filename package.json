@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@carbon/icons-vue": "^10.37.0",
+    "@grapoza/vue-tree": "^3.0.3",
     "@kawarimidoll/vuepress-plugin-tailwind": "^2.0.0",
     "@tailwindcss/aspect-ratio": "^0.2.1",
     "@tailwindcss/line-clamp": "^0.2.1",
@@ -32,6 +33,7 @@
     "sass-loader": "10",
     "vue-infinite-loading": "^2.4.5",
     "vue-utterances": "^0.1.4",
+    "vuejs-tree": "^3.0.1",
     "vuepress-plugin-git-log": "^1.0.1",
     "vuepress-plugin-global-toc": "^1.1.0"
   }

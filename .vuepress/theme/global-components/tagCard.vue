@@ -34,7 +34,7 @@
     <router-link
       :to="`/tags/${tag.name}/`"
       class="flex justify-end"
-      v-if="tag.pages.length > 1"
+      v-if="tag.pages.length > 2"
     >
       <span class="text-xs text-gray-400 dark:text-gray-600"
         >전체보기({{ tag.pages.length }})

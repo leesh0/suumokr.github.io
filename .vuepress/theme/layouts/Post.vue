@@ -5,15 +5,17 @@
     <author-card />
 
     <div class="flex items-center max-w-screen-md mx-auto px-3 gap-x-3 mb-10">
-      <div
+      <router-link
+        :to="`/tags/${tag}`"
         class="border px-3 py-0.5 rounded-full text-sm text-gray-600 dark:border-dark-200 dark:text-gray-400"
         v-for="tag in $page.frontmatter.tags"
       >
         <span class="text-blue-500">#</span>{{ tag }}
-      </div>
+      </router-link>
     </div>
 
-    <div
+    <router-link
+      :to="`/series/${$page.frontmatter.series}`"
       class="flex items-center justify-between gap-x-3 max-w-screen-md mx-auto px-3 my-10 bg-gray-50 dark:bg-dark-800 py-3 "
     >
       <div>
@@ -30,7 +32,7 @@
           class="w-10 h-10"
         />
       </div>
-    </div>
+    </router-link>
     <div class="relative">
       <div class="hidden xl:block sticky top-0 max-w-screen-md mx-auto">
         <div class="absolute -right-64 top-10 w-64 ">
@@ -42,7 +44,7 @@
     <div class="mt-10 max-w-screen-md mx-auto">
       <script
         src="https://utteranc.es/client.js"
-        repo="suumokr/blog-comment"
+        repo="suumokr/suumokr.github.io"
         issue-term="pathname"
         :theme="commentTheme"
         crossorigin="anonymous"

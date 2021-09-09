@@ -4,9 +4,11 @@
       <router-link to="/">
         <div>
           <span class="brand text-2xl text-black dark:text-gray-200">
-            開発記録
+            {{ $themeConfig.title }}
           </span>
-          <span class="ubuntu text-xs text-blue-600 px-1 py-0.5">Blog.</span>
+          <span class="ubuntu text-xs text-blue-600 px-1 py-0.5">{{
+            siteType
+          }}</span>
         </div>
       </router-link>
       <div class="flex gap-x-3 items-center">
@@ -39,6 +41,12 @@ export default {
       } else {
         document.body.classList.remove('dark')
       }
+    },
+  },
+  computed: {
+    siteType() {
+      const rootId = this.$page.path.split('/')[1]
+      return rootId !== 'til' ? 'Blog.' : 'TIL.'
     },
   },
 }
