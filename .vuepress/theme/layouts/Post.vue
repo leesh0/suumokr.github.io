@@ -1,6 +1,11 @@
 <template>
-  <div ref="markdown w-full">
-    <Content class="dark" />
+  <div>
+    <navbar />
+    <div class="max-w-screen-md mx-auto px-3">
+      <div id="postInfo"></div>
+      <Content class="prose-sm " />
+    </div>
+    <foot />
   </div>
 </template>
 
@@ -10,11 +15,15 @@ export default {}
 </script>
 
 <style lang="scss">
-.CodeMirror {
-  height: auto !important;
+.dark {
+  @apply bg-dark-900;
 }
-pre > code {
-  @apply text-sm;
-  font-family: 'Ubuntu', sans-serif;
+
+.bg-dark {
+  @apply bg-dark-800;
+}
+
+.bg-dark2 {
+  @apply bg-dark-900;
 }
 </style>

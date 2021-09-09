@@ -3,7 +3,7 @@
     <div class="relative wrapper flex flex-col">
       <div>
         <navbar />
-        <div class="max-w-screen-lg mx-auto px-3">
+        <div class="max-w-screen-lg mx-auto px-3 mt-5">
           <infocard />
         </div>
       </div>

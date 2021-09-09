@@ -29,12 +29,31 @@
         />
       </div>
       <!-- end Card -->
+
+      <!-- paginations -->
+      <infinite-loading class="mt-20" @infinite="infinite" spinner="spiral">
+        <div slot="spinner">Loading...</div>
+        <div slot="no-more" class="dark:text-gray-300 text-gray-500">
+          마지막 페이지 입니다.
+        </div>
+        <div
+          slot="no-results"
+          class="dark:text-gray-300 text-gray-500 text-xs"
+        ></div>
+      </infinite-loading>
     </div>
   </div>
 </template>
 
 <script>
+import Ascending from '@carbon/icons-vue/es/sort--ascending/32.js'
+import Descending from '@carbon/icons-vue/es/sort--descending/32.js'
+import InfiniteLoading from 'vue-infinite-loading'
+
+const pageMax = 10
+
 export default {
+  components: { Ascending, Descending, InfiniteLoading },
   beforeMount() {
     console.log('init', this.$pagination)
     if (this.reverse == true) {
@@ -45,15 +64,19 @@ export default {
   data() {
     return {
       orders: ['Desc', 'Asc'],
+      currentPage: 1,
     }
   },
   computed: {
     posts() {
       let pages = this.$pagination._matchedPages
       if (this.orders[0] == 'Asc') {
-        return pages.slice().reverse()
-      } else {
         return pages
+          .slice()
+          .reverse()
+          .slice(0, pageMax * this.currentPage)
+      } else {
+        return pages.slice(0, pageMax * this.currentPage)
       }
     },
     orderby() {
@@ -72,6 +95,18 @@ export default {
         return idx + 1
       } else {
         return this.posts.length - idx
+      }
+    },
+    infinite($state) {
+      const pageData = this.$pagination._matchedPages
+      const lastPage =
+        pageData.length / pageMax + (pageData.length % pageMax > 0 ? 1 : 0)
+      this.currentPage += 1
+      // console.log(this.currentPage, lastPage)
+      if (this.currentPage >= lastPage) {
+        $state.complete()
+      } else {
+        $state.loaded()
       }
     },
   },

@@ -6,6 +6,9 @@ module.exports = {
     require('@tailwindcss/typography'),
     // ...
   ],
+  variants: {
+    extend: { typography: ['dark'] },
+  },
   theme: {
     extend: {
       typography(theme) {

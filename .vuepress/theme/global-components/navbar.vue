@@ -9,7 +9,14 @@
           <span class="ubuntu text-xs text-blue-600 px-1 py-0.5">Blog.</span>
         </div>
       </router-link>
-      <div class="flex gap-3 items-center">
+      <div class="flex gap-x-3 items-center">
+        <router-link
+          :to="site.url"
+          v-for="site in $themeConfig.sites"
+          class="ubuntu underline-dotted underline pr-2 text-gray-600 dark:text-gray-300"
+        >
+          {{ site.name }}
+        </router-link>
         <Contrast
           @click="toggleMode"
           class="w-6 h-6 text-dark-800 hover:text-blue-500  cursor-pointer select-none dark:text-gray-400"
@@ -20,7 +27,9 @@
 </template>
 
 <script>
+import Contrast from '@carbon/icons-vue/es/brightness-contrast/32'
 export default {
+  components: { Contrast },
   methods: {
     toggleMode() {
       var isDark = localStorage.getItem('dark') === 'true' ? true : false

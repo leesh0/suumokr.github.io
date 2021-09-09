@@ -32,6 +32,7 @@ module.exports = {
     require('./theme/plugins/page'),
     '@kawarimidoll/tailwind',
     'vuepress-plugin-nprogress',
+    'vuepress-plugin-global-toc',
     [
       'vuepress-plugin-git-log',
       {

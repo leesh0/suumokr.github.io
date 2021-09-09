@@ -1,7 +1,7 @@
 <template>
   <router-link :to="post.path">
     <div
-      class="text-gray-400 transform transition delay-100 hover:text-dark-600 dark:text-dark-50 dark:hover:text-gray-200  hover:-translate-y-2 cursor-pointer"
+      class="text-gray-300 transform transition delay-100 hover:text-dark-600 dark:text-dark-100 dark:hover:text-gray-200  hover:-translate-y-2 cursor-pointer"
     >
       <div class="flex  gap-x-2 mb-2">
         <p
@@ -58,8 +58,8 @@
           </div>
           <p
             class="text-sm"
-            :class="minimal ? 'line-clamp-3 ' : 'line-clamp-4  my-3 h-20'"
-            :style="minimal ? 'height:3.75rem;' : ''"
+            :class="minimal ? 'line-clamp-3 ' : 'line-clamp-3  my-3 '"
+            :style="minimal ? 'height:3.75rem;' : 'height:3.75rem;'"
           >
             {{ post.desc }}
           </p>

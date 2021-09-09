@@ -8988,6 +8988,11 @@ vue-i18n@^8.11.2:
   resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-8.25.0.tgz#1037d9295fa2845a230b771de473481edb2cfc4c"
   integrity sha512-ynhcL+PmTxuuSE1T10htiSXzjBozxYIE3ffbM1RfgAkVbr/v1SP+9Mi/7/uv8ZVV1yGuKjFAYp9BXq+X7op6MQ==
 
+vue-infinite-loading@^2.4.5:
+  version "2.4.5"
+  resolved "https://registry.yarnpkg.com/vue-infinite-loading/-/vue-infinite-loading-2.4.5.tgz#cc20fd40af7f20188006443c99b60470cf1de1b3"
+  integrity sha512-xhq95Mxun060bRnsOoLE2Be6BR7jYwuC89kDe18+GmCLVrRA/dU0jrGb12Xu6NjmKs+iTW0AA6saSEmEW4cR7g==
+
 vue-loader@^15.7.1:
   version "15.9.8"
   resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-15.9.8.tgz#4b0f602afaf66a996be1e534fb9609dc4ab10e61"
@@ -9111,6 +9116,11 @@ vuepress-plugin-git-log@^1.0.1:
   integrity sha512-oVUfHdfvP0e7JBRIgwJ/Kmxj1AO+JJyTEsNRnBRw7YBlIfJIIC/zcGFidupsw6LSr1+UTHdGqn2vlYr8Ade6Fw==
   dependencies:
     cross-spawn "^6.0.5"
+
+vuepress-plugin-global-toc@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-global-toc/-/vuepress-plugin-global-toc-1.1.0.tgz#55bb6b83cda638e05dedb2422b499ea8f277e64c"
+  integrity sha512-y+WpVsAiE8o9MKhvt/oxOwPmMkJRquSmisrj7JCot3wAehZhiinkyfPrqCe9OI2kBimWNffe70U62RcuOb3JQQ==
 
 vuepress-plugin-mailchimp@^1.4.1:
   version "1.4.2"
