@@ -1,0 +1,31 @@
+name: blog deploy
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+
+    - name: Install and Build
+      run: |
+        yarn install
+        yarn docs:build
+        
+    - name: Deploy Build Files
+      env:
+        # You should enroll ACEESS_TOKEN to repository's secret
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} 
+      run: |
+        cd .vuepress/dist
+        git config --global user.email "notedev.jp@gmail.com"
+        git config --global user.name "suumokr"
+        git init
+        git add -A
+        git commit -m 'deploy with vuepress'
+        git push -f https://${ACCESS_TOKEN}@github.com/${GITHUB_REPOSITORY}.git master:gh-pages
