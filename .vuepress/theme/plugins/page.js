@@ -129,7 +129,7 @@ function getGitCreatedTimeStamp(filePath) {
       )
       .stdout.toString('utf-8')
 
-    lastUpdated = { gitLog } //parseInt(gitLog.split('\n')[0]) * 1000
+    lastUpdated = { data: gitLog.split('\n') } //parseInt(gitLog.split('\n')[0]) * 1000
   } catch (e) {
     /* do not handle for now */
   }

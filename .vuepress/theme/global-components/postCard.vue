@@ -50,7 +50,7 @@
           </p>
           <div v-if="!minimal" class="flex justify-between items-center">
             <p class="text-xs text-gray-400 ubuntu py-2">
-              {{ post.created.str }}
+              {{ post.created }}
             </p>
             <p class="text-xs text-gray-400 pb-1 ubuntu px-1">
               {{ post.readingTime.text }}
