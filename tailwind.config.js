@@ -6,6 +6,7 @@ module.exports = {
     require('@tailwindcss/typography'),
     // ...
   ],
+  purge: ['.vuepress/**/*.html', '.vuepress/**/*.vue', '.vuepress/**/*.jsx'],
   variants: {
     extend: { typography: ['dark'] },
   },
