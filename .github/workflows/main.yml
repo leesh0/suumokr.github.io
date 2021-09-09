@@ -8,7 +8,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Build and Deploy
-        uses: jenkey2011/vuepress-deploy@master
+        uses: suumokr/suumokr.github.io@master
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           TARGET_REPO: suumokr/suumokr.github.io
