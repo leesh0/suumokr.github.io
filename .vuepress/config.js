@@ -92,7 +92,7 @@ module.exports = {
     title: '開発記録',
     location: 'Korea',
     sns: { github: 'suumokr' },
-    sites: [{ fav: '', name: 'TIL.', url: '/til/' }],
+    // sites: [{ fav: '', name: 'TIL.', url: '/til/' }],
     skills: {
       // https://devicon.dev/
       lang: ['javascript', 'python'],
