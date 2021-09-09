@@ -59,6 +59,9 @@ export default {}
 </script>
 
 <style lang="scss">
+* {
+  @apply font-sans;
+}
 .dark {
   @apply bg-dark-900;
 }
