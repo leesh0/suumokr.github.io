@@ -6,10 +6,9 @@
     </p>
 
     <div>
-      <div
-        class="flex gap-x-2 pb-5 dark:text-gray-300 items-center"
-        v-for="post in tag.pages.slice(0, 2)"
-      >
+      <router-link :to="post.path">
+        class="flex gap-x-2 pb-5 dark:text-gray-300 items-center" v-for="post in
+        tag.pages.slice(0, 2)" >
         <div
           class="flex-shrink-0 w-16 h-16 rounded-md bg-gray-50 dark:bg-dark-800  flex justify-center items-center"
         >
@@ -28,7 +27,7 @@
             post.created.str
           }}</span>
         </div>
-      </div>
+      </router-link>
     </div>
 
     <router-link
