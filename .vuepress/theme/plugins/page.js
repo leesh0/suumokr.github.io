@@ -51,7 +51,7 @@ module.exports = {
     const createdTimeStamp = getGitCreatedTimeStamp(_filePath)
     // const createdTime = transformer(createdTimeStamp, lang)
     $page.created = createdTimeStamp
-    $page.frontmatter.date = createdTime.str
+    // $page.frontmatter.date = createdTime.str
 
     // 1. Add extra fields.
     var contentLength = _strippedContent?.length
