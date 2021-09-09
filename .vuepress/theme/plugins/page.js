@@ -49,8 +49,8 @@ module.exports = {
     // get created time from git logs
     const lang = _computed.$lang
     const createdTimeStamp = getGitCreatedTimeStamp(_filePath)
-    const createdTime = transformer(createdTimeStamp, lang)
-    $page.created = createdTime
+    // const createdTime = transformer(createdTimeStamp, lang)
+    $page.created = createdTimeStamp
     $page.frontmatter.date = createdTime.str
 
     // 1. Add extra fields.
@@ -129,7 +129,7 @@ function getGitCreatedTimeStamp(filePath) {
       )
       .stdout.toString('utf-8')
 
-    lastUpdated = parseInt(gitLog.split('\n')[0]) * 1000
+    lastUpdated = { gitLog } //parseInt(gitLog.split('\n')[0]) * 1000
   } catch (e) {
     /* do not handle for now */
   }
