@@ -118,7 +118,6 @@ function getGitCreatedTimeStamp(filePath) {
         [
           'log',
           '--reverse',
-          '--oneline',
           '--no-merges',
           '--format=%at',
           path.basename(filePath),

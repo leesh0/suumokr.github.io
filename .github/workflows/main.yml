@@ -24,6 +24,7 @@ jobs:
           cd .vuepress/dist
           git config --global user.email "notedev.jp@gmail.com"
           git config --global user.name "suumokr"
+          git init
           git add -A
           git commit -m 'deploy with vuepress'
           git push -f https://${ACCESS_TOKEN}@github.com/${GITHUB_REPOSITORY}.git master:gh-pages
