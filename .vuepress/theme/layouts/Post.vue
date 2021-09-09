@@ -1,6 +1,8 @@
 <template>
   <div>
-    <navbar />
+    <ClientOnly>
+      <navbar />
+    </ClientOnly>
     <postInfo />
     <author-card />
 
@@ -42,14 +44,9 @@
       <Content class="md-content" />
     </div>
     <div class="mt-10 max-w-screen-md mx-auto">
-      <script
-        src="https://utteranc.es/client.js"
-        repo="suumokr/suumokr.github.io"
-        issue-term="pathname"
-        :theme="commentTheme"
-        crossorigin="anonymous"
-        async
-      ></script>
+      <ClientOnly>
+        <utterances />
+      </ClientOnly>
     </div>
 
     <foot />
@@ -58,34 +55,7 @@
 
 <script>
 import '@theme/styles/vscode.css'
-export default {
-  mounted() {
-    var mode = localStorage.getItem('dark')
-    if (mode == null) {
-      if (
-        window.matchMedia &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches
-      ) {
-        localStorage.setItem('dark', true)
-      } else {
-        localStorage.setItem('dark', false)
-      }
-    }
-    mode = localStorage.getItem('dark') === 'true' ? true : false
-    if (mode) {
-      document.body.classList.add('dark')
-    } else {
-      document.body.classList.remove('dark')
-    }
-  },
-  computed: {
-    commentTheme() {
-      return localStorage.getItem('dark') === 'true'
-        ? 'github-dark'
-        : 'github-light'
-    },
-  },
-}
+export default {}
 </script>
 
 <style lang="scss">

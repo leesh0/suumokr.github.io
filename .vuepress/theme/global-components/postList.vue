@@ -31,16 +31,18 @@
       <!-- end Card -->
 
       <!-- paginations -->
-      <infinite-loading class="mt-20" @infinite="infinite" spinner="spiral">
-        <div slot="spinner">Loading...</div>
-        <div slot="no-more" class="dark:text-gray-300 text-gray-500">
-          마지막 페이지 입니다.
-        </div>
-        <div
-          slot="no-results"
-          class="dark:text-gray-300 text-gray-500 text-xs"
-        ></div>
-      </infinite-loading>
+      <ClientOnly>
+        <infinite-loading class="mt-20" @infinite="infinite" spinner="spiral">
+          <div slot="spinner">Loading...</div>
+          <div slot="no-more" class="dark:text-gray-300 text-gray-500">
+            마지막 페이지 입니다.
+          </div>
+          <div
+            slot="no-results"
+            class="dark:text-gray-300 text-gray-500 text-xs"
+          ></div>
+        </infinite-loading>
+      </ClientOnly>
     </div>
   </div>
 </template>
@@ -55,7 +57,6 @@ const pageMax = 10
 export default {
   components: { Ascending, Descending, InfiniteLoading },
   beforeMount() {
-    console.log('init', this.$pagination)
     if (this.reverse == true) {
       this.orders = this.orders.slice().reverse()
     }
@@ -102,7 +103,6 @@ export default {
       const lastPage =
         pageData.length / pageMax + (pageData.length % pageMax > 0 ? 1 : 0)
       this.currentPage += 1
-      // console.log(this.currentPage, lastPage)
       if (this.currentPage >= lastPage) {
         $state.complete()
       } else {

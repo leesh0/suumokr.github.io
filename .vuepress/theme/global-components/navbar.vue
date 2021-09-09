@@ -32,6 +32,25 @@
 import Contrast from '@carbon/icons-vue/es/brightness-contrast/32'
 export default {
   components: { Contrast },
+  mounted() {
+    var mode = window.localStorage.getItem('dark')
+    if (mode == null) {
+      if (
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      ) {
+        window.localStorage.setItem('dark', true)
+      } else {
+        window.localStorage.setItem('dark', false)
+      }
+    }
+    mode = window.localStorage.getItem('dark') === 'true' ? true : false
+    if (mode) {
+      document.body.classList.add('dark')
+    } else {
+      document.body.classList.remove('dark')
+    }
+  },
   methods: {
     toggleMode() {
       var isDark = localStorage.getItem('dark') === 'true' ? true : false

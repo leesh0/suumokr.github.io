@@ -2,7 +2,9 @@
   <div class="h-full font-sans">
     <div class="relative wrapper flex flex-col">
       <div>
-        <navbar />
+        <ClientOnly>
+          <navbar />
+        </ClientOnly>
         <div class="max-w-screen-lg mx-auto px-3 mt-5">
           <infocard />
         </div>
@@ -28,25 +30,6 @@
 
 <script>
 export default {
-  mounted() {
-    var mode = localStorage.getItem('dark')
-    if (mode == null) {
-      if (
-        window.matchMedia &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches
-      ) {
-        localStorage.setItem('dark', true)
-      } else {
-        localStorage.setItem('dark', false)
-      }
-    }
-    mode = localStorage.getItem('dark') === 'true' ? true : false
-    if (mode) {
-      document.body.classList.add('dark')
-    } else {
-      document.body.classList.remove('dark')
-    }
-  },
   data() {
     return {
       tab: 1,

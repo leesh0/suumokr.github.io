@@ -5,31 +5,39 @@
     "feed_url": "http://localhost:8080/feed.json",
     "items": [
         {
-            "id": "http://localhost:8080/blog/posts/",
-            "url": "http://localhost:8080/blog/posts/",
-            "title": "vue.js로 프론트엔드 완벽 정복하기",
-            "summary": "주제 내용",
-            "date_modified": "2021-08-23T13:37:00.000Z"
-        },
-        {
             "id": "http://localhost:8080/blog/test/",
             "url": "http://localhost:8080/blog/test/",
             "title": "알고리즘공부 -2- .",
-            "summary": "결정론적인 연립미분방정식. 비주기,복잡,초기값탈해성",
-            "date_modified": "2021-08-25T18:45:00.000Z"
+            "summary": "통한 다수의 요소의 집합으로 부터 발생하는 현상의 연구",
+            "date_modified": "2021-09-08T00:48:00.000Z"
         },
         {
-            "id": "http://localhost:8080/blog/one/",
-            "url": "http://localhost:8080/blog/one/",
-            "title": "알고리즘공부 -1- .",
-            "summary": "결정론적인 연립미분방정식. 비주기,복잡,초기값탈해성",
-            "date_modified": "2021-08-23T13:37:00.000Z"
+            "id": "http://localhost:8080/blog/markdown-test/",
+            "url": "http://localhost:8080/blog/markdown-test/",
+            "title": "Markdown Test.",
+            "summary": "Enable typographer option to see result.",
+            "image": "https://octodex.github.com/images/minion.png",
+            "date_modified": "2021-09-08T00:48:00.000Z"
         },
         {
             "id": "http://localhost:8080/blog/test2/",
             "url": "http://localhost:8080/blog/test2/",
             "title": "django로 프론트엔드 완벽 정복하기",
             "date_modified": "2021-08-26T08:01:00.000Z"
+        },
+        {
+            "id": "http://localhost:8080/blog/one/",
+            "url": "http://localhost:8080/blog/one/",
+            "title": "알고리즘공부 -1- .",
+            "summary": "Lesson 1",
+            "date_modified": "2021-09-08T00:48:00.000Z"
+        },
+        {
+            "id": "http://localhost:8080/blog/posts/",
+            "url": "http://localhost:8080/blog/posts/",
+            "title": "vue.js로 프론트엔드 완벽 정복하기",
+            "summary": "주제 내용",
+            "date_modified": "2021-08-23T13:37:00.000Z"
         }
     ]
 }

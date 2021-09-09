@@ -29,12 +29,9 @@
     "@tailwindcss/typography": "^0.4.1",
     "@vuepress/plugin-last-updated": "^1.8.2",
     "codemirror": "^5.62.3",
+    "core-js": "^3.17.3",
     "node-sass": "^6.0.1",
     "sass-loader": "10",
-    "vue-infinite-loading": "^2.4.5",
-    "vue-utterances": "^0.1.4",
-    "vuejs-tree": "^3.0.1",
-    "vuepress-plugin-git-log": "^1.0.1",
-    "vuepress-plugin-global-toc": "^1.1.0"
+    "vue-infinite-loading": "^2.4.5"
   }
 }

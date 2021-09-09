@@ -2,7 +2,9 @@
   <div class="h-full ">
     <div class="relative wrapper flex flex-col">
       <div>
-        <navbar />
+        <ClientOnly>
+          <navbar />
+        </ClientOnly>
         <div class="max-w-screen-md mx-auto px-3">
           <series-info />
         </div>
@@ -19,27 +21,7 @@
 </template>
 
 <script>
-export default {
-  mounted() {
-    var mode = localStorage.getItem('dark')
-    if (mode == null) {
-      if (
-        window.matchMedia &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches
-      ) {
-        localStorage.setItem('dark', true)
-      } else {
-        localStorage.setItem('dark', false)
-      }
-    }
-    mode = localStorage.getItem('dark') === 'true' ? true : false
-    if (mode) {
-      document.body.classList.add('dark')
-    } else {
-      document.body.classList.remove('dark')
-    }
-  },
-}
+export default {}
 </script>
 
 <style>

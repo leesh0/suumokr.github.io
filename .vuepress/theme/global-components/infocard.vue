@@ -5,13 +5,13 @@
       <div class="dark:text-gray-200 ubuntu">
         {{ $themeConfig.name }}
       </div>
-      <router-link
+      <a
         v-if="$themeConfig.sns.github"
-        :to="`https://github.com/${$themeConfig.sns.github}`"
+        :href="`https://github.com/${$themeConfig.sns.github}`"
         class="text-dark-900 dark:text-gray-200"
       >
         <i class="devicon-github-original" />
-      </router-link>
+      </a>
     </div>
   </div>
 </template>
