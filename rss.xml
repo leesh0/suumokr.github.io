@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Suumokr</title>
+        <link>http://localhost:8080</link>
+        <description></description>
+        <lastBuildDate>Fri, 10 Sep 2021 04:04:41 GMT</lastBuildDate>
+        <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+        <generator>https://github.com/webmasterish/vuepress-plugin-feed</generator>
+        <atom:link href="http://localhost:8080/feed.atom" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Blog開設しました。]]></title>
+            <link>http://localhost:8080/blog/blog-open/</link>
+            <guid>http://localhost:8080/blog/blog-open/</guid>
+            <pubDate>Fri, 10 Sep 2021 02:09:00 GMT</pubDate>
+            <description><![CDATA[最近、勉強した内容を記録する必要性を感じたので勉強した内容を記録するブログを作りました。]]></description>
+        </item>
+        <item>
+            <title><![CDATA[pyenvが動作しない時。]]></title>
+            <link>http://localhost:8080/blog/pyenv-setting/</link>
+            <guid>http://localhost:8080/blog/pyenv-setting/</guid>
+            <pubDate>Fri, 10 Sep 2021 12:53:00 GMT</pubDate>
+            <description><![CDATA[`]]></description>
+        </item>
+    </channel>
+</rss>

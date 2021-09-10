@@ -1,0 +1,22 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Suumokr",
+    "home_page_url": "http://localhost:8080",
+    "feed_url": "http://localhost:8080/feed.json",
+    "items": [
+        {
+            "id": "http://localhost:8080/blog/blog-open/",
+            "url": "http://localhost:8080/blog/blog-open/",
+            "title": "Blog開設しました。",
+            "summary": "最近、勉強した内容を記録する必要性を感じたので勉強した内容を記録するブログを作りました。",
+            "date_modified": "2021-09-10T02:09:00.000Z"
+        },
+        {
+            "id": "http://localhost:8080/blog/pyenv-setting/",
+            "url": "http://localhost:8080/blog/pyenv-setting/",
+            "title": "pyenvが動作しない時。",
+            "summary": "`",
+            "date_modified": "2021-09-10T12:53:00.000Z"
+        }
+    ]
+}
