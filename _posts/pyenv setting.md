@@ -1,6 +1,6 @@
 ---
 title: PYENVが作動しない時。
-thumb: python-misc
+thumb: 'python-misc'
 series: error-python
 tags:['python','pyenv']
 ---
